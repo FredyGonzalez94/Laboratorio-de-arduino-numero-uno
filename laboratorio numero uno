@@ -1,0 +1,20 @@
+#Realizado por Fredy Gonzalez#
+#importamos los archivos que tiene que leer el arduino#
+import serial
+import time
+#declaramos la cariable y el puertoque se usara para poder encender el led#
+Arduino = serial.Serial('COM2', 9600)
+time.sleep(2)
+#impirmimos en consola las instrucciones#
+print("Presione 1 para Encender y 0 para Apagar el LED:  ")
+#usamos un ciclo while explicando cuando debe de encender o apagar un led# 
+while 1:
+
+    datousuario = input()
+
+    if datousuario == '1':
+        Arduino.write(b'1')
+        print("LED Encendido")
+    elif datousuario == '0':
+        Arduino.write(b'0')
+        print("LED Apagado")
